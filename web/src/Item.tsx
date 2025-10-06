@@ -15,6 +15,13 @@ export const Item = ({ item, ...props }: Props) => {
       });
     };
 
+    // visualViewport resize 이벤트 발생 후 scroll
+    const handleResize = () => {
+      scrollToCenter();
+      window.visualViewport?.removeEventListener('resize', handleResize);
+    };
+
+    window.visualViewport?.addEventListener('resize', handleResize);
     scrollToCenter();
   };
 
