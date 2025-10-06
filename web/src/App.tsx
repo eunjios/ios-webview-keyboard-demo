@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import './App.css';
+import { Item } from './Item';
 
 const getItems = (length: number) => {
   return Array.from({ length }, (_, i) => i);
@@ -73,15 +74,8 @@ function App() {
       <div className="flex-1 bg-gray-100 p-2 overflow-auto">
         <h2>스크롤 가능 공간</h2>
         <ul>
-          {getItems(20).map((item, i) => (
-            <li key={i} className="p-2 flex justify-between">
-              <span>{item}</span>
-              <input
-                className="border"
-                onFocus={() => console.log('Input focused:', i)}
-                onBlur={() => console.log('Input blurred:', i)}
-              />
-            </li>
+          {getItems(20).map((item) => (
+            <Item key={item} item={item} />
           ))}
         </ul>
         {/* 디버깅 */}
