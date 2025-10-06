@@ -1,0 +1,20 @@
+# Xcode
+*.xcuserstate
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.ipa
+*.dSYM.zip
+
+# Build products
+build/
+Build/
+
+# CocoaPods
+Pods/
+
+# React build (web에서 생성됨)
+KeyboardTest/build/
+
+# macOS
+.DS_Store

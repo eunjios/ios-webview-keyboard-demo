@@ -1,0 +1,14 @@
+{
+  "name": "ios-webview-keyboard-test",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "web:dev": "cd web && pnpm dev",
+    "web:build": "cd web && pnpm build",
+    "web:test": "cd web && pnpm test",
+    "ios:build": "cd web && pnpm build:ios"
+  },
+  "workspaces": [
+    "web"
+  ]
+}
