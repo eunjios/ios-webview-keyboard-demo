@@ -2,6 +2,27 @@
 
 > Demo project to fix keyboard bounce and scroll issues in iOS WKWebView with web app.
 
+<details>
+<summary>❌ Before (Problem)</summary>
+
+<br />
+
+Layout shift when keyboard appears
+
+![1-setup-ios-webview-based-hybrid-app (1)](https://github.com/user-attachments/assets/b8377849-6b32-4ca5-afbf-8b100c93a6e9)
+
+</details>
+<details>
+<summary>✅ After (Fixed)</summary>
+
+<br />
+
+No bounce, auto-scroll
+
+![6-fix-scroll-resize](https://github.com/user-attachments/assets/008cff8a-afa0-48e0-9e57-80a22920ec7a)
+
+</details>
+
 ## Problem
 
 When focusing on input fields in iOS WKWebView:
@@ -10,6 +31,8 @@ When focusing on input fields in iOS WKWebView:
 - Unable to maintain separate fixed and scrollable areas
 
 ## Solution
+
+For detailed implementation process and changes, see [Pull Request #1](https://github.com/eunjios/ios-webview-keyboard-demo/pull/1)
 
 ### Swift (WKWebView)
 
