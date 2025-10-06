@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
 const getItems = (length: number) => {
@@ -6,6 +6,7 @@ const getItems = (length: number) => {
 };
 
 function App() {
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [debugInfo, setDebugInfo] = useState({
     visualHeight: 0,
     visualWidth: 0,
@@ -46,8 +47,25 @@ function App() {
     };
   }, []);
 
+  const handleResize = useCallback(() => {
+    const height = window.visualViewport?.height || window.innerHeight;
+    setViewportHeight(height);
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+
+    window.visualViewport?.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', () => window.scrollTo(0, 0));
+
+    return () => {
+      window.visualViewport?.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
   return (
-    <div className="h-full flex flex-col gap-4 overflow-hidden container">
+    <div className="h-full flex flex-col gap-4 overflow-hidden container" style={{ height: `${viewportHeight}px` }}>
       <div className="flex-shrink-0 bg-red-100 p-2 py-10">
         <h2>고정된 공간</h2>
       </div>
