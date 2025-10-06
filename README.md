@@ -3,17 +3,17 @@
 > Demo project to fix keyboard bounce and scroll issues in iOS WKWebView with web app.
 
 <details>
-<summary>❌ Before (Problem)</summary>
+<summary>Before (Problem)</summary>
 
 <br />
 
 Layout shift when keyboard appears
 
-![1-setup-ios-webview-based-hybrid-app (1)](https://github.com/user-attachments/assets/b8377849-6b32-4ca5-afbf-8b100c93a6e9)
+![before](https://github.com/user-attachments/assets/944fb8c3-fd55-44ad-bc57-5d354f6373cb)
 
 </details>
 <details>
-<summary>✅ After (Fixed)</summary>
+<summary>After (Fixed)</summary>
 
 <br />
 
